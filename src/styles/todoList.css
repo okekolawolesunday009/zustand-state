@@ -1,0 +1,12 @@
+.todo-list-container {
+    background-color: red;
+    margin: 0 auto;
+    width: 70%;
+
+}
+.tasks-count{
+    display: flex;
+    justify-items: space-between;
+    gap: 20px
+
+}
