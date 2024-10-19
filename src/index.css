@@ -7,6 +7,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  font-size: 77%;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  html {
+    font-size: 57%;
+  }
+}  
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

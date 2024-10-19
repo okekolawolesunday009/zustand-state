@@ -1,12 +1,139 @@
+/* General Container */
 .todo-list-container {
-    background-color: red;
     margin: 0 auto;
     width: 70%;
-
+    max-width: 900px; /* Set max width for better control */
+    text-align: center;
+    padding: 1rem;
 }
-.tasks-count{
-    display: flex;
-    justify-items: space-between;
-    gap: 20px
 
+/* Tasks Count Section */
+.tasks-count {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Task Item Card */
+.list-item {
+    list-style: none;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    margin-bottom: 1.2rem;
+    border-radius: 0.8rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.list-item:hover {
+    transform: translateY(-5px); /* Card hover effect */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Task Content Styling */
+.list-item-task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.list-item-task span {
+    font-size: 1rem;
+    color: #333;
+}
+
+.list-item > span > span:nth-child(1) {
+    margin-right: 1rem;
+}
+
+/* ID and Deadline Alignment */
+.list-item > span > span:nth-child(2) {
+    flex: 1;
+    text-align: left;
+    color: #666; /* Subtle color for secondary text */
+}
+
+/* Align the last item (deadline, etc.) */
+.list-item > span > span:last-child {
+    text-align: right;
+    color: #999; /* Lighter text */
+}
+
+/* Buttons */
+button {
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    padding: 0.7rem 1.2rem;
+    border-radius: 0.5rem;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* delete Button */
+.delete {
+    background-color: red;
+    color: white;
+}
+
+.delete:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Completed Button */
+.completed {
+    background-color: #28a745;
+    color: white;
+}
+
+.completed:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Action buttons alignment */
+.action {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Task Completion Status */
+.task-completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .todo-list-container {
+        width: 90%;
+    }
+
+    .list-item {
+        padding: 1rem;
+    }
+
+    .list-item-task {
+        /* flex-direction: column; Stack content on small screens */
+        align-items: flex-start;
+    }
+
+    .action {
+        justify-content: space-between;
+        flex-direction: column; /* Stack buttons vertically */
+    }
+
+    button {
+        width: 100%; /* Full width buttons on mobile */
+        font-size: 1rem;
+
+    }
 }
